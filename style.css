@@ -73,8 +73,14 @@ button{font-family:inherit;cursor:pointer;}
   display:flex;align-items:center;justify-content:space-between;
   gap:24px;
 }
-.nav-logo{display:flex;align-items:center;}
-.nav-logo img{height:34px;width:auto;}
+.nav-logo{
+  display:flex;align-items:center;
+  background:rgba(10,10,10,.4);backdrop-filter:blur(6px);
+  padding:6px 12px;border-radius:4px;
+  transition:background .4s ease;
+}
+.site-header.scrolled .nav-logo{background:transparent;backdrop-filter:none;padding:6px 0;}
+.nav-logo img{height:34px;width:auto;display:block;}
 .nav-links{display:flex;align-items:center;gap:34px;}
 .nav-links a{
   font-size:13px;letter-spacing:.08em;text-transform:uppercase;

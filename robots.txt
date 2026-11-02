@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sedric6-rgb.github.io/comm109-site/sitemap.xml
