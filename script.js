@@ -133,13 +133,14 @@
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---- Intro sequence (homepage only): logo reveal then fullscreen teaser ---- */
+  /* ---- Intro sequence (homepage only, mobile/tablette uniquement): logo puis teaser ---- */
   var introOverlay = document.getElementById('introOverlay');
   if(introOverlay){
     var alreadySeen = false;
     try{ alreadySeen = sessionStorage.getItem('comm109IntroSeen') === '1'; }catch(e){}
+    var isSmallScreen = window.matchMedia('(max-width: 760px)').matches;
 
-    if(alreadySeen){
+    if(alreadySeen || !isSmallScreen){
       introOverlay.remove();
     } else {
       var logoStage = document.getElementById('introLogoStage');
