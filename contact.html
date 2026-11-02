@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Contact — COMM'109</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="COMM'109"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta-mobile">Discuter de mon projet</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Discuter de mon projet</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">📩 Contact</p>
+      <h1 class="reveal">Parlons de votre prochain projet.</h1>
+      <p class="lead reveal">Chaque projet commence par une idée. La différence, c’est ce que vous en faites. Chez COMM’109, nous transformons les intentions en impact. Si vous êtes prêt à passer à un autre niveau, nous sommes prêts à vous accompagner.</p>
+      <div class="btn-row reveal">
+        <a href="#contact-form" class="btn btn-primary">Discuter de mon projet</a>
+        <a href="#contact-form" class="btn btn-outline">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-form">
+    <div class="wrap">
+      <div class="contact-grid reveal">
+
+        <div class="contact-info">
+          <p class="eyebrow">Nos coordonnées</p>
+          <h2 style="margin-top:16px;font-size:clamp(26px,3vw,36px);">Écrivez-nous, où que vous soyez.</h2>
+
+          <div class="info-row">
+            <div class="info-label">Email</div>
+            <div class="info-value">contact@comm109.com<button class="copy-btn" data-copy="contact@comm109.com">Copier</button></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">Téléphone — Sénégal</div>
+            <div class="info-value">+221 XX XXX XX XX<button class="copy-btn" data-copy="+221 XX XXX XX XX">Copier</button></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">Téléphone — France</div>
+            <div class="info-value">+33 X XX XX XX XX<button class="copy-btn" data-copy="+33 X XX XX XX XX">Copier</button></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">Zone d’intervention</div>
+            <div class="info-value" style="font-size:17px;">Sénégal · France · Europe · Afrique</div>
+          </div>
+
+          <p style="margin-top:36px;color:var(--fg-dim);font-size:14px;line-height:1.7;">Un échange initial permet de cadrer précisément votre besoin, sans engagement.</p>
+        </div>
+
+        <form class="contact-form" novalidate>
+          <div class="field">
+            <label for="f-name">Nom complet</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-company">Entreprise / Marque</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-service">Service recherché</label>
+            <select id="f-service" name="service">
+              <option value="">Sélectionner un service</option>
+              <option>Production audiovisuelle</option>
+              <option>Contenus réseaux sociaux</option>
+              <option>Stratégie de communication</option>
+              <option>Branding &amp; image de marque</option>
+              <option>Activation digitale</option>
+              <option>Conseil &amp; accompagnement</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">Votre projet</label>
+            <textarea id="f-message" name="message" required placeholder="Parlez-nous de votre projet, vos objectifs, votre calendrier…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Envoyer le message</button>
+          <p class="form-note" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" style="padding:0;">
+    <div class="split" style="min-height:0;">
+      <div class="split-media" style="min-height:360px;"><div class="ph-visual" data-label="COMM'109 — Sénégal"></div></div>
+      <div class="split-text wrap" style="max-width:none;">
+        <p class="eyebrow">Basés au Sénégal</p>
+        <h2 style="font-size:clamp(24px,3vw,34px);">Une ambition résolument internationale</h2>
+        <p>COMM’109 accompagne des projets en France, en Europe et en Afrique. Notre structure agile nous permet de nous adapter à différents marchés et de créer des campagnes pertinentes, où que vous soyez.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="images/logo-white.png" alt="COMM'109">
+        <p>Agence de communication et de production audiovisuelle. L’excellence créative au service de votre image.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>contact@comm109.com</li>
+          <li>+221 XX XXX XX XX</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> COMM’109 — Tous droits réservés</span>
+      <span class="footer-social">
+        <a href="contact.html">Instagram</a>
+        <a href="contact.html">LinkedIn</a>
+        <a href="https://youtube.com/shorts/AdzjQU4xjhY" target="_blank" rel="noopener">YouTube</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

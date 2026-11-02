@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Portfolio — COMM'109</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo-white.png" alt="COMM'109"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta-mobile">Discuter de mon projet</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Discuter de mon projet</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">🎬 Portfolio / Nos créations</p>
+      <h1 class="reveal">Chaque projet est une démonstration de notre exigence.</h1>
+      <p class="lead reveal">Nous concevons des contenus qui ne se contentent pas d’exister, mais qui marquent. Du concept à la réalisation, chaque détail est pensé pour maximiser l’impact. Voici un aperçu de ce que nous créons.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="pf-filters reveal">
+        <button class="pf-filter active" data-filter="all">Tous</button>
+        <button class="pf-filter" data-filter="film">Film de marque</button>
+        <button class="pf-filter" data-filter="publicite">Publicité</button>
+        <button class="pf-filter" data-filter="digital">Activation digitale</button>
+        <button class="pf-filter" data-filter="social">Social</button>
+        <button class="pf-filter" data-filter="storytelling">Storytelling</button>
+      </div>
+
+      <div class="portfolio-grid reveal">
+        <div class="pf-card" data-category="film">
+          <div class="ph-visual" data-label="Film institutionnel"></div>
+          <div class="pf-overlay"><span class="pf-tag">Film de marque</span><span class="pf-title">Une vision qui transforme</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="publicite">
+          <div class="ph-visual" data-label="Publicité produit"></div>
+          <div class="pf-overlay"><span class="pf-tag">Publicité</span><span class="pf-title">L’expérience sensorielle</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="digital">
+          <div class="ph-visual" data-label="Campagne digitale"></div>
+          <div class="pf-overlay"><span class="pf-tag">Activation digitale</span><span class="pf-title">Lancement nouvelle gamme</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="social">
+          <div class="ph-visual" data-label="Capsule virale"></div>
+          <div class="pf-overlay"><span class="pf-tag">Social</span><span class="pf-title">30 secondes pour marquer</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="storytelling">
+          <div class="ph-visual" data-label="Portrait de marque"></div>
+          <div class="pf-overlay"><span class="pf-tag">Storytelling</span><span class="pf-title">L’humain au cœur</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="storytelling">
+          <div class="ph-visual" data-label="Storytelling entreprise"></div>
+          <div class="pf-overlay"><span class="pf-tag">Storytelling</span><span class="pf-title">De l’ombre à la lumière</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="digital">
+          <div class="ph-visual" data-label="Activation événementielle"></div>
+          <div class="pf-overlay"><span class="pf-tag">Activation digitale</span><span class="pf-title">Créer l’attention</span></div>
+          <div class="pf-play"></div>
+        </div>
+        <div class="pf-card" data-category="social">
+          <div class="ph-visual" data-label="Format social"></div>
+          <div class="pf-overlay"><span class="pf-tag">Social</span><span class="pf-title">Impact immédiat</span></div>
+          <div class="pf-play"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band reveal">
+    <div class="wrap" style="text-align:center;">
+      <p class="eyebrow" style="justify-content:center;">Votre projet, notre prochain film</p>
+      <h2>Et si votre marque devenait<br>impossible à oublier ?</h2>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-primary">Discuter de mon projet</a>
+        <a href="services.html" class="btn btn-outline">Découvrir nos services</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="images/logo-white.png" alt="COMM'109">
+        <p>Agence de communication et de production audiovisuelle. L’excellence créative au service de votre image.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>contact@comm109.com</li>
+          <li>+221 XX XXX XX XX</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> COMM’109 — Tous droits réservés</span>
+      <span class="footer-social">
+        <a href="contact.html">Instagram</a>
+        <a href="contact.html">LinkedIn</a>
+        <a href="https://youtube.com/shorts/AdzjQU4xjhY" target="_blank" rel="noopener">YouTube</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
