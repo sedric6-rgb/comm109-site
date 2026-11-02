@@ -133,4 +133,74 @@
     el.textContent = new Date().getFullYear();
   });
 
+  /* ---- Intro sequence (homepage only): logo reveal then fullscreen teaser ---- */
+  var introOverlay = document.getElementById('introOverlay');
+  if(introOverlay){
+    var alreadySeen = false;
+    try{ alreadySeen = sessionStorage.getItem('comm109IntroSeen') === '1'; }catch(e){}
+
+    if(alreadySeen){
+      introOverlay.remove();
+    } else {
+      var logoStage = document.getElementById('introLogoStage');
+      var videoStage = document.getElementById('introVideoStage');
+      var skipBtn = document.getElementById('introSkip');
+      var videoFrame = document.getElementById('introVideoFrame');
+      var finished = false;
+      var fallbackTimer, toVideoTimer;
+
+      document.body.classList.add('intro-active');
+
+      function markSeen(){
+        try{ sessionStorage.setItem('comm109IntroSeen', '1'); }catch(e){}
+      }
+
+      function finishIntro(){
+        if(finished) return;
+        finished = true;
+        markSeen();
+        clearTimeout(fallbackTimer);
+        clearTimeout(toVideoTimer);
+        introOverlay.classList.add('intro-hidden');
+        document.body.classList.remove('intro-active');
+        setTimeout(function(){
+          if(introOverlay && introOverlay.parentNode){ introOverlay.remove(); }
+        }, 1000);
+      }
+
+      function goToVideoStage(){
+        if(finished) return;
+        logoStage.classList.add('stage-out');
+        videoStage.classList.add('stage-in');
+        fallbackTimer = setTimeout(finishIntro, 45000);
+      }
+
+      toVideoTimer = setTimeout(goToVideoStage, 2200);
+
+      if(skipBtn){ skipBtn.addEventListener('click', finishIntro); }
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') finishIntro();
+      });
+
+      window.addEventListener('message', function(e){
+        if(typeof e.data !== 'string') return;
+        try{
+          var data = JSON.parse(e.data);
+          if(data.event === 'onStateChange' && data.info === 0){
+            finishIntro();
+          }
+        }catch(err){ /* not a YouTube API message */ }
+      });
+
+      if(videoFrame){
+        videoFrame.addEventListener('load', function(){
+          try{
+            videoFrame.contentWindow.postMessage(JSON.stringify({event:'listening', id:1}), '*');
+          }catch(e){}
+        });
+      }
+    }
+  }
+
 })();
