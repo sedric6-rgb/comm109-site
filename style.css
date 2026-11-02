@@ -240,15 +240,24 @@ body.intro-active{overflow:hidden;height:100%;}
 }
 
 .intro-video-stage{
-  position:absolute;inset:0;background:#000;
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(139,0,0,.2), transparent 60%),
+    #0A0A0A;
   display:flex;align-items:center;justify-content:center;
   opacity:0;pointer-events:none;transition:opacity .9s ease;
 }
 .intro-video-stage.stage-in{opacity:1;pointer-events:auto;}
 .intro-video-inner{
   position:relative;
-  width:min(100vw, 56.25vh);   /* format original 9:16, contenu dans l'ecran */
-  height:min(100vh, 177.78vw);
+  width:min(88vw, 400px);      /* fenetre "telephone", format original 9:16 */
+  aspect-ratio:9/16;
+  max-height:82vh;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 50px 130px -25px rgba(0,0,0,.7);
 }
 .intro-video-stage iframe{
   position:absolute;inset:0;width:100%;height:100%;
