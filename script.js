@@ -138,9 +138,8 @@
   if(introOverlay){
     var alreadySeen = false;
     try{ alreadySeen = sessionStorage.getItem('comm109IntroSeen') === '1'; }catch(e){}
-    var isSmallScreen = window.matchMedia('(max-width: 760px)').matches;
 
-    if(alreadySeen || !isSmallScreen){
+    if(alreadySeen){
       introOverlay.remove();
     } else {
       var logoStage = document.getElementById('introLogoStage');
