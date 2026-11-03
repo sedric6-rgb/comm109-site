@@ -175,8 +175,13 @@
         if(finished || movedToVideo) return;
         movedToVideo = true;
         clearTimeout(logoFallbackTimer);
+        if(logoVideo){ logoVideo.pause(); }
         logoStage.classList.add('stage-out');
         videoStage.classList.add('stage-in');
+        /* la video du teaser ne charge et ne demarre qu'a cet instant, pas avant */
+        if(videoFrame && !videoFrame.src){
+          videoFrame.src = videoFrame.dataset.src;
+        }
         fallbackTimer = setTimeout(finishIntro, 45000);
       }
 
