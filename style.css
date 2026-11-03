@@ -392,7 +392,7 @@ body.intro-active{overflow:hidden;height:100%;}
 .split-list .num{font-family:var(--font-display);color:var(--accent-bright);font-size:15px;min-width:24px;}
 @media (max-width:900px){
   .split{grid-template-columns:1fr;}
-  .split-media{min-height:320px;}
+  .split-media{min-height:220px;}
   .split-text{padding:56px 0;}
 }
 
@@ -423,6 +423,10 @@ body.intro-active{overflow:hidden;height:100%;}
 .cta-band .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;}
 .cta-band .btn-primary{background:#fff;color:var(--accent);border-color:#fff;}
 .cta-band .btn-primary:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+@media (max-width:620px){
+  .cta-band{padding:96px 0;}
+  .cta-band h2{font-size:clamp(26px,6.5vw,34px);line-height:1.35;}
+}
 
 /* ---------- TEAM / VALUES (About) ---------- */
 .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;}
@@ -578,5 +582,5 @@ body.intro-active{overflow:hidden;height:100%;}
 .ph-visual::after{
   content:attr(data-label);
   font-family:var(--font-display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);
+  color:rgba(255,255,255,.6);
 }
