@@ -19,7 +19,7 @@
   --border-strong:rgba(24,21,15,.24);
   --font-display:'Playfair Display', 'Georgia', serif;
   --font-body:'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --font-script:'Dancing Script', 'Brush Script MT', cursive;
+  --font-script:'Alex Brush', 'Brush Script MT', cursive;
   --gutter: max(24px, env(safe-area-inset-left, 0px));
   --gutter-r: max(24px, env(safe-area-inset-right, 0px));
   --maxw: 1240px;
@@ -422,7 +422,7 @@ body.intro-active{overflow:hidden;height:100%;}
   text-align:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
 }
 .slogan-block q{
-  font-family:var(--font-script);font-weight:700;font-size:clamp(38px,6.4vw,68px);
+  font-family:var(--font-script);font-weight:400;font-size:clamp(44px,7.4vw,84px);
   color:var(--accent);quotes:none;line-height:1.35;
 }
 .slogan-block q::before,.slogan-block q::after{content:"";}
