@@ -146,8 +146,9 @@
       var videoStage = document.getElementById('introVideoStage');
       var skipBtn = document.getElementById('introSkip');
       var videoFrame = document.getElementById('introVideoFrame');
+      var logoVideo = document.getElementById('introLogoVideo');
       var finished = false;
-      var fallbackTimer, toVideoTimer;
+      var fallbackTimer, logoFallbackTimer, movedToVideo = false;
 
       document.body.classList.add('intro-active');
 
@@ -160,7 +161,7 @@
         finished = true;
         markSeen();
         clearTimeout(fallbackTimer);
-        clearTimeout(toVideoTimer);
+        clearTimeout(logoFallbackTimer);
         introOverlay.classList.add('intro-hidden');
         document.body.classList.remove('intro-active');
         setTimeout(function(){
@@ -169,13 +170,19 @@
       }
 
       function goToVideoStage(){
-        if(finished) return;
+        if(finished || movedToVideo) return;
+        movedToVideo = true;
+        clearTimeout(logoFallbackTimer);
         logoStage.classList.add('stage-out');
         videoStage.classList.add('stage-in');
         fallbackTimer = setTimeout(finishIntro, 45000);
       }
 
-      toVideoTimer = setTimeout(goToVideoStage, 2200);
+      if(logoVideo){
+        logoVideo.addEventListener('ended', goToVideoStage);
+      }
+      /* filet de securite si la video du logo ne demarre pas (autoplay bloque, etc.) */
+      logoFallbackTimer = setTimeout(goToVideoStage, 11000);
 
       if(skipBtn){ skipBtn.addEventListener('click', finishIntro); }
 
