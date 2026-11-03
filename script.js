@@ -164,6 +164,7 @@
         markSeen();
         clearTimeout(fallbackTimer);
         clearTimeout(logoFallbackTimer);
+        if(logoVideo){ logoVideo.pause(); }
         introOverlay.classList.add('intro-hidden');
         document.body.classList.remove('intro-active');
         setTimeout(function(){
@@ -194,8 +195,11 @@
 
       function setSoundOn(on){
         soundOn = on;
-        if(logoVideo){ logoVideo.muted = !on; if(on){ logoVideo.play().catch(function(){}); } }
-        sendYoutubeCommand(on ? 'unMute' : 'mute');
+        if(!movedToVideo && logoVideo){
+          logoVideo.muted = !on;
+          if(on){ logoVideo.play().catch(function(){}); }
+        }
+        if(movedToVideo){ sendYoutubeCommand(on ? 'unMute' : 'mute'); }
         if(soundBtn){
           soundBtn.classList.toggle('is-on', on);
           soundBtn.querySelector('.icon').textContent = on ? '🔊' : '🔇';
