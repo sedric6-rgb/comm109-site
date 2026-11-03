@@ -203,7 +203,6 @@
         if(soundBtn){
           soundBtn.classList.toggle('is-on', on);
           soundBtn.querySelector('.icon').textContent = on ? '🔊' : '🔇';
-          soundBtn.querySelector('.label').textContent = on ? 'Couper le son' : 'Activer le son';
           soundBtn.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son');
         }
       }
