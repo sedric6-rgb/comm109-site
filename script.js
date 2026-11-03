@@ -224,7 +224,7 @@
         }
       }
       /* filet de securite si la video du logo ne demarre pas (autoplay bloque, etc.) */
-      logoFallbackTimer = setTimeout(goToVideoStage, 11000);
+      logoFallbackTimer = setTimeout(goToVideoStage, 8000);
 
       if(skipBtn){ skipBtn.addEventListener('click', finishIntro); }
 
