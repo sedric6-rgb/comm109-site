@@ -147,7 +147,9 @@
       var skipBtn = document.getElementById('introSkip');
       var videoFrame = document.getElementById('introVideoFrame');
       var logoVideo = document.getElementById('introLogoVideo');
+      var soundBtn = document.getElementById('introSound');
       var finished = false;
+      var soundOn = false;
       var fallbackTimer, logoFallbackTimer, movedToVideo = false;
 
       document.body.classList.add('intro-active');
@@ -178,8 +180,39 @@
         fallbackTimer = setTimeout(finishIntro, 45000);
       }
 
+      function sendYoutubeCommand(func){
+        if(!videoFrame || !videoFrame.contentWindow) return;
+        try{
+          videoFrame.contentWindow.postMessage(JSON.stringify({event:'command', func:func, args:[]}), '*');
+        }catch(e){}
+      }
+
+      function setSoundOn(on){
+        soundOn = on;
+        if(logoVideo){ logoVideo.muted = !on; if(on){ logoVideo.play().catch(function(){}); } }
+        sendYoutubeCommand(on ? 'unMute' : 'mute');
+        if(soundBtn){
+          soundBtn.classList.toggle('is-on', on);
+          soundBtn.querySelector('.icon').textContent = on ? '🔊' : '🔇';
+          soundBtn.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son');
+        }
+      }
+
+      if(soundBtn){
+        soundBtn.addEventListener('click', function(){ setSoundOn(!soundOn); });
+      }
+
       if(logoVideo){
         logoVideo.addEventListener('ended', goToVideoStage);
+        /* tente la lecture avec le son active ; si le navigateur la bloque, on repasse en muet (lecture garantie) */
+        logoVideo.muted = false;
+        var playWithSound = logoVideo.play();
+        if(playWithSound && typeof playWithSound.catch === 'function'){
+          playWithSound.then(function(){ setSoundOn(true); }).catch(function(){
+            logoVideo.muted = true;
+            logoVideo.play().catch(function(){});
+          });
+        }
       }
       /* filet de securite si la video du logo ne demarre pas (autoplay bloque, etc.) */
       logoFallbackTimer = setTimeout(goToVideoStage, 11000);
